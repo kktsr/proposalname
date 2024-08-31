@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const options = {
-        industry: ["IT", "製造", "金融", "流通"],
-        competition: ["競合A", "競合B", "並走"],
+        industry: ["エネルギー", "サービス", "医療", "医薬品", "物流", "金融", "建設", "小売", "情報通信", "製造", "不動産", "ゲーム", "保険", "官公庁", "エンタメ", "自動車", "電子機器", "家電"],
+        competition: ["競合", "並走"],
         category: ["カテゴリ1", "カテゴリ2", "カテゴリ3"],
         kpi: ["KPI1", "KPI2", "KPI3"],
         media: ["メディアA", "メディアB", "メディアC"],
-        result: ["成功", "失敗", "保留"]
+        result: ["勝利", "敗退", "結果待ち", "中止", "-"]
     };
 
     function populateSelect(id, options) {
