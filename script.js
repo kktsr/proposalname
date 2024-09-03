@@ -54,7 +54,7 @@ function generateNamingRule() {
     const formattedProposalMonth = proposalMonth ? formatDate(proposalMonth, 'year-month') : '';
     const formattedCreationDate = creationDate ? formatDate(creationDate, 'full-date') : '';
 
-    const namingRule = `【${industry}】【${clientName}】【${competition}】【${proposalTitle}】【${category}】【${kpi}】【${media}】【${formattedProposalMonth}】【${result}】【${personInCharge}】【${formattedCreationDate}】`;
+    const namingRule = `【${industry}】【${clientName}】【${competition}】【${proposalTitle}】【${category}】【${kpi}】【${media}】【${formattedProposalMonth}】【${result}】【${personInCharge}】_${formattedCreationDate}`;
 
     document.getElementById('resultDisplay').textContent = namingRule;
 }
