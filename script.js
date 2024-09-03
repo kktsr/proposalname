@@ -51,10 +51,15 @@ function generateNamingRule() {
     const personInCharge = document.getElementById('personInCharge').value;
     const creationDate = document.getElementById('creationDate').value;
 
-    const formattedProposalMonth = proposalMonth ? formatDate(proposalMonth, 'year-month') : '';
-    const formattedCreationDate = creationDate ? formatDate(creationDate, 'full-date') : '';
+    // 日付のフォーマット
+    const proposalMonthFormatted = proposalMonth ? `${proposalMonth.split('-')[0]}年${proposalMonth.split('-')[1]}月` : '';
 
-    const namingRule = `【${industry}】【${clientName}】【${competition}】【${proposalTitle}】【${category}】【${kpi}】【${media}】【${formattedProposalMonth}】【${result}】【${personInCharge}】_${formattedCreationDate}`;
+    // 作成日のフォーマットを「yyyymmdd」に変換
+    const creationDateFormatted = creationDate ? creationDate.split('-').join('') : '';
 
-    document.getElementById('resultDisplay').textContent = namingRule;
+    // 結果テキストの生成
+    const resultText = `${industry}【${clientName}】【${competition}】【${proposalTitle}】【${category}】【${kpi}】【${media}】【${proposalMonthFormatted}】【${result}】【${personInCharge}】_${creationDateFormatted}`;
+
+    // 結果を表示
+    document.getElementById('resultDisplay').textContent = resultText;
 }
