@@ -58,7 +58,7 @@ function generateNamingRule() {
     const creationDateFormatted = creationDate ? creationDate.split('-').join('') : '';
 
     // 結果テキストの生成
-    const resultText = `${industry}【${clientName}】【${competition}】【${proposalTitle}】【${category}】【${kpi}】【${media}】【${proposalMonthFormatted}】【${result}】【${personInCharge}】_${creationDateFormatted}`;
+    const resultText = `【${industry}】【${clientName}】【${competition}】【${proposalTitle}】【${category}】【${kpi}】【${media}】【${proposalMonthFormatted}】【${result}】【${personInCharge}】_${creationDateFormatted}`;
 
     // 結果を表示
     document.getElementById('resultDisplay').textContent = resultText;
