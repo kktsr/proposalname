@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企画書命名ルール</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        body {
+            font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "Yu Gothic UI", sans-serif;
+            padding: 20px;
+            text-align: center; /* 全体の中央揃え */
+        }
+        h1 {
+            text-align: center; /* タイトルを中央に */
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left; /* 左揃え */
+            display: block; /* ブロック表示で縦に並べる */
+            width: 100%; /* 幅を100%にしてフォームを横幅いっぱいに表示 */
+            max-width: 600px; /* 最大幅を設定 */
+            margin-left: auto;
+            margin-right: auto; /* 中央揃え */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], select, input[type="month"], input[type="date"] {
+            width: 100%; /* 横幅を100%に設定 */
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box; /* パディングとボーダーを含めた幅に */
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #dcdcdc; /* グレーの枠線 */
+            display: inline-block; /* コンテンツの幅に合わせて表示 */
+            background-color: #f9f9f9; /* 背景色 */
+        }
+    </style>
+</head>
+<body>
+    <h1>企画書命名ルール</h1>
+    <form id="namingForm">
+        <div class="form-group">
+            <label for="industry">1. 業種:</label>
+            <select id="industry" name="industry"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="clientName">2. クライアント名:</label>
+            <input type="text" id="clientName" name="clientName">
+        </div>
+
+        <div class="form-group">
+            <label for="competition">3. 競合/並走:</label>
+            <select id="competition" name="competition"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="proposalTitle">4. 提案タイトル:</label>
+            <input type="text" id="proposalTitle" name="proposalTitle">
+        </div>
+
+        <div class="form-group">
+            <label for="category">5. カテゴリ:</label>
+            <select id="category" name="category"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="kpi">6. KPI:</label>
+            <select id="kpi" name="kpi"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="media">7. メディア:</label>
+            <select id="media" name="media"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="proposalMonth">8. 提案月:</label>
+            <input type="month" id="proposalMonth" name="proposalMonth">
+        </div>
+
+        <div class="form-group">
+            <label for="result">9. 結果:</label>
+            <select id="result" name="result"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="personInCharge">10. 担当者:</label>
+            <input type="text" id="personInCharge" name="personInCharge">
+        </div>
+
+        <div class="form-group">
+            <label for="creationDate">11. 作成日:</label>
+            <input type="date" id="creationDate" name="creationDate">
+        </div>
+
+        <button type="button" onclick="generateNamingRule()">ファイル名を作成</button>
+    </form>
+
+    <p class="result" id="resultDisplay"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
